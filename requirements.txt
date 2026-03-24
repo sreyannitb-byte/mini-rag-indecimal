@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+numpy
+pypdf
+python-dotenv
+requests
+scikit-learn
