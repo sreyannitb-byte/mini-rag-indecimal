@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini RAG Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Mini RAG Chatbot</h1>
+      <p>Grounded answers from indexed construction documents.</p>
+      <p class="hint">Put docs in: <code>{{ docs_dir }}</code> then click Reindex.</p>
+    </header>
+
+    <section class="controls">
+      <button id="reindexBtn">Reindex Documents</button>
+      <span id="statusText">Loading status...</span>
+    </section>
+
+    <section class="chat-box">
+      <label for="queryInput">Ask a question</label>
+      <textarea id="queryInput" rows="3" placeholder="What factors affect construction project delays?"></textarea>
+      <div class="row">
+        <label for="topK">Top-K</label>
+        <input id="topK" type="number" min="1" max="10" value="4" />
+        <button id="askBtn">Ask</button>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2>Final Answer</h2>
+      <pre id="answerOutput">No answer yet.</pre>
+    </section>
+
+    <section class="results">
+      <h2>Retrieved Context</h2>
+      <div id="contextOutput" class="context-list"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
